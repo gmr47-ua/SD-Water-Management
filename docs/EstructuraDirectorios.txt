@@ -1,0 +1,23 @@
+WaterManagement/
+├── .github/
+│   └── workflows/              # Opcional: CI/CD o scripts de integración
+├── core_system/                # Módulos centrales (Despliegue en Cloud / Railway)
+│   ├── central/                # Aplicación WM_Central
+│   │   ├── Dockerfile
+│   │   └── database/           # Scripts de inicialización SQLite y archivo .db
+│   └── docker-compose.cloud.yml# Orquestador para entorno Railway (Central + Kafka)
+├── watering_station/           # Módulo Estaciones de Riego (Despliegue en Local)
+│   ├── monitor/                # Aplicación WM_WS_M
+│   │   └── Dockerfile
+│   └── engine/                 # Aplicación WM_WS_E
+│       └── Dockerfile
+├── field_operator/            # Módulo Operarios de Campo (Despliegue en Local)
+│   ├── Dockerfile
+│   └── config/                 # Ficheros de carga masiva de tareas de riego (.txt/.json)
+├── shared/                     # Librerías o utilidades compartidas (Protocolos, Tramas STX/ETX, etc.)
+├── docs/                       # Documentación y capturas
+│   ├── prompts/                # Registro obligatorio de Prompts de IA generativa
+│   └── deployment_guide.md     # Guía de despliegue paso a paso
+├── docker-compose.local.yml    # Orquestador local para laboratorios (WS + FO)
+├── .gitignore
+└── README.md
