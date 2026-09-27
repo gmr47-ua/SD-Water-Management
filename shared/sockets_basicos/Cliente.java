@@ -3,12 +3,12 @@ import java.io.*;
 
 /**
 *
-* Clase abstracta socket basica Cliente con modulos definidos de lectura y esxritura son socket servidor.
+* Clase abstracta socket basica Cliente con modulos definidos de lectura y escritura con socket Servidor.
 * Es obigatorio crear en las clases heredadas un main, el método menú y demas métodos y atributos necesarios para la aplicación.
  */
 public abstract class Cliente{
 
-	public void hablaServer(Socket sc,String men)
+	public static void hablaServer(Socket sc,String men)
 	{
     try {
     		OutputStream salida = sc.getOutputStream();
@@ -20,7 +20,7 @@ public abstract class Cliente{
     	}
 	}
 
-	public String escuchaServer(Socket sc){
+	public static String escuchaServer(Socket sc){
     	String res = "";
         try {
             InputStream in = sc.getInputStream();
